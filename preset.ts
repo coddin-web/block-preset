@@ -1,4 +1,3 @@
-import slugify from "slugify";
 import {editFiles} from "@preset/core";
 
 export default definePreset({
@@ -10,7 +9,7 @@ export default definePreset({
 		// ask Block name and slug
 		await prompt({ name: 'name', text: 'Block name?' });
 
-		await prompt({ name: 'slug', text: 'Block slug?', default: slugify(prompts.name, {lower: true, trim: true}) });
+		await prompt({ name: 'slug', text: 'Block slug?', default: slugify(prompts.name) });
 
 		await extractTemplates({
 			to: 'blocks/' + prompts.slug,
@@ -44,3 +43,7 @@ export default definePreset({
 		});
 	},
 })
+
+function slugify(name: string) {
+	return name.toLowerCase().replace(/\s/g, '-');
+}
