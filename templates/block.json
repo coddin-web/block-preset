@@ -1,0 +1,16 @@
+{
+  "name": "cbp/@@blockSlug",
+  "title": "@@blockName",
+  "description": "A custom block named @@blockName.",
+  "style": [ "file:./@@blockSlug.css" ],
+  "category": "coddin-blocks",
+  "icon": "admin-comments",
+  "keywords": [],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "@@blockSlug.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
